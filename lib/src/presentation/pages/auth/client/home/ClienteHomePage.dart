@@ -9,7 +9,7 @@ class ClientHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bienvenido Alejandro'),
+        title: const Text('Welcome Boss'),
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
         backgroundColor: Colors.green,
       ),

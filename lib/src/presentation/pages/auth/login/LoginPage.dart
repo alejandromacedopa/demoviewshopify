@@ -2,6 +2,7 @@ import 'package:demo_view_shopify/src/domain/models/AuthResponse.dart';
 import 'package:demo_view_shopify/src/domain/utils/Resource.dart';
 import 'package:demo_view_shopify/src/presentation/pages/auth/login/LoginContent.dart';
 import 'package:demo_view_shopify/src/presentation/pages/auth/login/bloc/LoginBloc.dart';
+import 'package:demo_view_shopify/src/presentation/pages/auth/login/bloc/LoginEvent.dart';
 import 'package:demo_view_shopify/src/presentation/pages/auth/login/bloc/LoginState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
         } else if (responseState is Success) {
           final authResponse = responseState.data as AuthResponse;
           //_bloc?.add(LoginFormReset());
-          //  _bloc?.add(LoginSaveUserSession(authResponse: authResponse));
+          _bloc?.add(LoginSaveSession(authResponse: authResponse));
           Fluttertoast.showToast(
               msg: 'Login exitoso',
               toastLength: Toast.LENGTH_LONG); //toas de testeo

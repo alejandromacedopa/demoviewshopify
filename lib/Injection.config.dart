@@ -8,6 +8,8 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:demo_view_shopify/src/data/dataSource/local/SharedPref.dart'
+    as _i601;
 import 'package:demo_view_shopify/src/data/dataSource/remote/services/AuthServices.dart'
     as _i283;
 import 'package:demo_view_shopify/src/di/AppModule.dart' as _i292;
@@ -30,6 +32,8 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final appModule = _$AppModule();
+    gh.factory<_i601.SharedPref>(() => appModule.sharedPref);
+    gh.factoryAsync<String>(() => appModule.token);
     gh.factory<_i283.AuthServices>(() => appModule.authServices);
     gh.factory<_i877.AuthRepository>(() => appModule.authRepository);
     gh.factory<_i623.AuthUseCases>(() => appModule.authUseCases);
