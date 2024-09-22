@@ -2,6 +2,7 @@ import 'package:demo_view_shopify/src/presentation/pages/auth/login/LoginContent
 import 'package:demo_view_shopify/src/presentation/pages/auth/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 
+//vista cliente contenido
 class ClientHomePage extends StatelessWidget {
   const ClientHomePage({super.key});
 
