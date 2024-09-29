@@ -1,4 +1,6 @@
 import 'package:demo_view_shopify/Injection.dart';
+import 'package:demo_view_shopify/src/presentation/pages/admin/home/AdminHomePage.dart';
+import 'package:demo_view_shopify/src/presentation/pages/admin/roles/create/RolesCreatePage.dart';
 import 'package:demo_view_shopify/src/presentation/pages/blocProviders.dart';
 import 'package:demo_view_shopify/src/presentation/pages/auth/client/home/ClienteHomePage.dart';
 import 'package:demo_view_shopify/src/presentation/pages/auth/login/LoginPage.dart';
@@ -34,6 +36,8 @@ class MyApp extends StatelessWidget {
               'login': (BuildContext context) => LoginPage(),
               'register': (BuildContext context) => RegisterPage(),
               'client/home': (BuildContext context) => ClientHomePage(),
+              'admin/home': (BuildContext context) => AdminHomePage(),
+              'create': (BuildContext context) => RolesCreatePage()
             }));
   }
 }

@@ -1,4 +1,4 @@
-import 'package:demo_view_shopify/src/domain/models/Role.dart';
+import 'package:demo_view_shopify/src/domain/models/Roles.dart';
 
 class User {
   //variblaes
@@ -10,7 +10,7 @@ class User {
   String? password;
   String? image;
   String? notificationToken;
-  List<Role>? roles;
+  List<Roles>? roles;
 
   //constructor
   User({
@@ -35,7 +35,7 @@ class User {
         image: json["image"],
         notificationToken: json["notification_token"] ?? '',
         roles: json["roles"] != null
-            ? List<Role>.from(json["roles"].map((x) => Role.fromJson(x)))
+            ? List<Roles>.from(json["roles"].map((x) => Roles.fromJson(x)))
             : [],
       );
 

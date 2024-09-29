@@ -12,11 +12,17 @@ import 'package:demo_view_shopify/src/data/dataSource/local/SharedPref.dart'
     as _i601;
 import 'package:demo_view_shopify/src/data/dataSource/remote/services/AuthServices.dart'
     as _i283;
+import 'package:demo_view_shopify/src/data/dataSource/remote/services/RolesServices.dart'
+    as _i1056;
 import 'package:demo_view_shopify/src/di/AppModule.dart' as _i292;
 import 'package:demo_view_shopify/src/domain/repository/AuthRepository.dart'
     as _i877;
+import 'package:demo_view_shopify/src/domain/repository/RolesRepository.dart'
+    as _i144;
 import 'package:demo_view_shopify/src/domain/useCases/auth/AuthUseCases.dart'
     as _i623;
+import 'package:demo_view_shopify/src/domain/useCases/roles/RolesUseCases.dart'
+    as _i546;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -37,6 +43,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i283.AuthServices>(() => appModule.authServices);
     gh.factory<_i877.AuthRepository>(() => appModule.authRepository);
     gh.factory<_i623.AuthUseCases>(() => appModule.authUseCases);
+    gh.factory<_i1056.RolesService>(() => appModule.rolesService);
+    gh.factory<_i144.RolesRepository>(() => appModule.rolesRepository);
+    gh.factory<_i546.RolesUseCases>(() => appModule.rolesUseCases);
     return this;
   }
 }

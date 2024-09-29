@@ -44,13 +44,17 @@ class LoginContent extends StatelessWidget {
   }
 
   Widget _imageBackground(BuildContext context) {
+    // Obtiene las dimensiones de la pantalla solo una vez
+    final size = MediaQuery.of(context).size;
+
     return Image.asset(
-      'assets/img/background2.jpg',
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      fit: BoxFit.cover,
-      color: Colors.black54,
-      colorBlendMode: BlendMode.darken,
+      'assets/img/login.png',
+      width: size.width, // Ancho de la pantalla
+      height: size.height, // Alto de la pantalla
+      fit: BoxFit.cover, // La imagen cubrirá todo el fondo
+      color: Colors.black54.withOpacity(
+          0.7), // Le das un efecto oscuro con transparencia ajustable
+      colorBlendMode: BlendMode.darken, // Mezcla para oscurecer la imagen
     );
   }
 
@@ -63,10 +67,29 @@ class LoginContent extends StatelessWidget {
   }
 
   Widget _textLogin() {
-    return Text(
-      'LOGIN',
-      style: TextStyle(
-          color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+    return ShaderMask(
+      shaderCallback: (bounds) => LinearGradient(
+        colors: [Colors.blue, const Color.fromARGB(255, 255, 255, 255)],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ).createShader(bounds),
+      child: Text(
+        'Login',
+        style: TextStyle(
+          fontSize: 32, // Aumenta el tamaño del texto
+          fontWeight: FontWeight.bold, // Negrita para darle más presencia
+          letterSpacing: 4, // Espaciado amplio entre letras
+          color: Colors.white, // Color blanco que será mezclado con el shader
+          shadows: [
+            Shadow(
+              offset: Offset(2.0, 2.0),
+              blurRadius: 3.0,
+              color: Colors.black38, // Sombra sutil para darle profundidad
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 
@@ -113,7 +136,7 @@ class LoginContent extends StatelessWidget {
               bloc!.add(LoginSubmit());
             }
           },
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
           child: Text(
             'Iniciar Sesion',
             style: TextStyle(color: Colors.white),

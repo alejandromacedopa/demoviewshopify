@@ -3,6 +3,7 @@ import 'package:demo_view_shopify/src/domain/repository/AuthRepository.dart';
 
 class RegisterUseCase {
   AuthRepository repository;
+  
   RegisterUseCase(this.repository);
   run(User user) => repository.register(user);
 }
